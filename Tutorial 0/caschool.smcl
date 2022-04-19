@@ -1,0 +1,93 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}Z:\STATA data files\caschool.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}16 Apr 2022, 15:55:43
+{txt}
+{com}. 
+. * Loading the dataset
+. use caschool.dta
+{txt}
+{com}. 
+. * Descriptive statistics
+. su
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}avginc {c |}{res}        420    15.31659     7.22589      5.335     55.328
+{txt}{space 4}calw_pct {c |}{res}        420    13.24604    11.45482          0    78.9942
+{txt}{space 4}comp_stu {c |}{res}        420    .1359266    .0649558          0   .4208333
+{txt}{space 4}computer {c |}{res}        420    303.3833    441.3413          0       3324
+{txt}{space 6}county {c |}{res}          0
+{txt}{hline 13}{c +}{hline 57}
+{space 4}dist_cod {c |}{res}        420    67472.81    3466.995      61382      75440
+{txt}{space 4}district {c |}{res}          0
+{txt}{space 6}el_pct {c |}{res}        420    15.76816    18.28593          0   85.53972
+{txt}{space 4}enrl_tot {c |}{res}        420    2628.793    3913.105         81      27176
+{txt}{space 4}expn_stu {c |}{res}        420    5312.408    633.9371    3926.07   7711.507
+{txt}{hline 13}{c +}{hline 57}
+{space 5}gr_span {c |}{res}          0
+{txt}{space 4}math_scr {c |}{res}        420    653.3426     18.7542      605.4      709.5
+{txt}{space 4}meal_pct {c |}{res}        420    44.70524    27.12338          0        100
+{txt}observatio~r {c |}{res}        420       210.5    121.3878          1        420
+{txt}{space 4}read_scr {c |}{res}        420    654.9705    20.10798      604.5        704
+{txt}{hline 13}{c +}{hline 57}
+{space 9}str {c |}{res}        420    19.64043    1.891812         14       25.8
+{txt}{space 4}teachers {c |}{res}        420    129.0674    187.9127       4.85       1429
+{txt}{space 5}testscr {c |}{res}        420    654.1565    19.05335     605.55     706.75
+{txt}computer_d~e {c |}{res}        420    262.7405    375.2258         45       1037
+{txt}
+{com}. 
+. * Creating a scatterplot with a regression line
+. twoway (scatter testscr str) (lfit testscr str)
+{res}{txt}
+{com}. 
+. * Regression with robust standard errors
+. reg testscr str, robust
+
+{txt}Linear regression                               Number of obs     = {res}       420
+                                                {txt}F(1, 418)         =  {res}    19.26
+                                                {txt}Prob > F          = {res}    0.0000
+                                                {txt}R-squared         = {res}    0.0512
+                                                {txt}Root MSE          =    {res} 18.581
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}     testscr{col 14}{c |} Coefficient{col 26}  std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}str {c |}{col 14}{res}{space 2}-2.279808{col 26}{space 2} .5194892{col 37}{space 1}   -4.39{col 46}{space 3}0.000{col 54}{space 4}-3.300945{col 67}{space 3}-1.258671
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  698.933{col 26}{space 2} 10.36436{col 37}{space 1}   67.44{col 46}{space 3}0.000{col 54}{space 4} 678.5602{col 67}{space 3} 719.3057
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+. * Deriving the fit and the residuals
+. predict testscrfit
+{txt}(option {bf:xb} assumed; fitted values)
+
+{com}. predict testscrres, residuals
+{txt}
+{com}. 
+. ** Saving the extended file
+. save caschool2.dta, replace
+{txt}{p 0 4 2}
+(file {bf}
+caschool2.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+caschool2.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. * Close the log-file
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}Z:\STATA data files\caschool.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}16 Apr 2022, 15:55:48
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
