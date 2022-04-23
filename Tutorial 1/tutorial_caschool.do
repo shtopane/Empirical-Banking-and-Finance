@@ -104,7 +104,7 @@ twoway (scatter testscr computer_discrete) (lfit testscr computer_discrete)
 * graph export testscr_computer_discrete_raw.pdf
 * b)
 generate obs = 1
-collapse testscr (sum) obs, by(computer_discrete)
+collapse testscr (sum) obs, by(computer_discrete) /* check with Prof.'s code
 summarize
 * c)
 regress testscr computer_discrete
@@ -114,5 +114,8 @@ rvfplot, yline(0)
 twoway (scatter testscr computer_discrete) (lfit testscr computer_discrete)
 * Save graph
 * graph export testscr_avg_computer_discrete_new.pdf
-regress testscr computer_discrete [aw=obs]
+* aw: analytic weigths, with this we get basically the same coeff as
+* reg testscr computer_discrete, robust. Note: original regression has 420 obs
+* and this one has 3 observations!
+regress testscr computer_discrete [aw=obs], robust
 twoway (scatter testscr computer_discrete) (lfit testscr computer_discrete)
