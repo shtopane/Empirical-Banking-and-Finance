@@ -1,0 +1,1008 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}X:\regressions_tutorial2.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}23 Apr 2022, 21:26:06
+{txt}
+{com}. 
+. using dataEmpBF_Tutorial2.dta
+{err}command {bf}using{sf} is unrecognized
+{txt}{search r(199), local:r(199);}
+
+end of do-file
+
+{search r(199), local:r(199);}
+
+{com}. do "X:\tutorial_2.do"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. log using regressions_tutorial2, replace
+{err}log file already open
+{txt}{search r(604), local:r(604);}
+
+end of do-file
+
+{search r(604), local:r(604);}
+
+{com}. do "X:\tutorial_2.do"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. log using regressions_tutorial2, replace
+{err}log file already open
+{txt}{search r(604), local:r(604);}
+
+end of do-file
+
+{search r(604), local:r(604);}
+
+{com}. 
+
+. do "X:\tutorial_2.do"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. log using regressions_tutorial2, replace
+{err}log file already open
+{txt}{search r(604), local:r(604);}
+
+end of do-file
+
+{search r(604), local:r(604);}
+
+{com}. do "X:\tutorial_2.do"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. log using regressions_tutorial2, replace
+{err}log file already open
+{txt}{search r(604), local:r(604);}
+
+end of do-file
+
+{search r(604), local:r(604);}
+
+{com}. do "X:\tutorial_2.do"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. log using regressions_tutorial2, text
+{err}log file already open
+{txt}{search r(604), local:r(604);}
+
+end of do-file
+
+{search r(604), local:r(604);}
+
+{com}. do "X:\tutorial_2.do"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. *log using regressions_tutorial2, text
+. 
+. use dataEmpBF_Tutorial2.dta
+{txt}
+{com}. 
+. browse
+{txt}
+{com}. 
+. *log close regressions_tutorial2
+. 
+{txt}end of do-file
+
+{com}. 
+
+. histogram gdpgrowth
+{txt}(bin={res}9{txt}, start={res}-.0561875{txt}, width={res}11.117354{txt})
+{res}
+{com}. histogram public_banks_1970
+{txt}(bin={res}9{txt}, start={res}-1{txt}, width={res}.23333333{txt})
+{res}
+{com}. histogram loggdp_1960
+{txt}(bin={res}9{txt}, start={res}3.931826{txt}, width={res}.52650844{txt})
+{res}
+{com}. do "X:\tutorial_2.do"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. // log using regressions_tutorial2, text
+. 
+. // 1. Regression 1
+. // a) load data
+. use dataEmpBF_Tutorial2.dta
+{txt}
+{com}. 
+. regress gdpgrowth public_banks_1970 loggdp_1960
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        87
+{txt}{hline 13}{c +}{hline 34}   F(2, 84)        = {res}     5.51
+{txt}       Model {c |} {res} 1419.24176         2  709.620881   {txt}Prob > F        ={res}    0.0056
+{txt}    Residual {c |} {res} 10817.1248        84  128.775296   {txt}R-squared       ={res}    0.1160
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0949
+{txt}       Total {c |} {res} 12236.3666        86  142.283332   {txt}Root MSE        =   {res} 11.348
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        gdpgrowth{col 19}{c |} Coefficient{col 31}  Std. err.{col 43}      t{col 51}   P>|t|{col 59}     [95% con{col 72}f. interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+public_banks_1970 {c |}{col 19}{res}{space 2}-11.11978{col 31}{space 2} 3.349535{col 42}{space 1}   -3.32{col 51}{space 3}0.001{col 59}{space 4} -17.7807{col 72}{space 3}-4.458865
+{txt}{space 6}loggdp_1960 {c |}{col 19}{res}{space 2}-1.476743{col 31}{space 2}  1.30213{col 42}{space 1}   -1.13{col 51}{space 3}0.260{col 59}{space 4}-4.066172{col 72}{space 3} 1.112685
+{txt}{space 12}_cons {c |}{col 19}{res}{space 2} 16.46479{col 31}{space 2} 8.489099{col 42}{space 1}    1.94{col 51}{space 3}0.056{col 59}{space 4}-.4167185{col 72}{space 3} 33.34629
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+. 
+. 
+. // log close regressions_tutorial2
+. 
+{txt}end of do-file
+
+{com}. do "C:\Users\s6krkiri\AppData\Local\Temp\STD237c_000000.tmp"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. // log using regressions_tutorial2, text
+. 
+. // 1. Regression 1
+. // a) load data
+. use dataEmpBF_Tutorial2.dta
+{txt}
+{com}. 
+. regress gdpgrowth public_banks_1970 loggdp_1960
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        87
+{txt}{hline 13}{c +}{hline 34}   F(2, 84)        = {res}     5.51
+{txt}       Model {c |} {res} 1419.24176         2  709.620881   {txt}Prob > F        ={res}    0.0056
+{txt}    Residual {c |} {res} 10817.1248        84  128.775296   {txt}R-squared       ={res}    0.1160
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0949
+{txt}       Total {c |} {res} 12236.3666        86  142.283332   {txt}Root MSE        =   {res} 11.348
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        gdpgrowth{col 19}{c |} Coefficient{col 31}  Std. err.{col 43}      t{col 51}   P>|t|{col 59}     [95% con{col 72}f. interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+public_banks_1970 {c |}{col 19}{res}{space 2}-11.11978{col 31}{space 2} 3.349535{col 42}{space 1}   -3.32{col 51}{space 3}0.001{col 59}{space 4} -17.7807{col 72}{space 3}-4.458865
+{txt}{space 6}loggdp_1960 {c |}{col 19}{res}{space 2}-1.476743{col 31}{space 2}  1.30213{col 42}{space 1}   -1.13{col 51}{space 3}0.260{col 59}{space 4}-4.066172{col 72}{space 3} 1.112685
+{txt}{space 12}_cons {c |}{col 19}{res}{space 2} 16.46479{col 31}{space 2} 8.489099{col 42}{space 1}    1.94{col 51}{space 3}0.056{col 59}{space 4}-.4167185{col 72}{space 3} 33.34629
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. estat hettest
+
+{txt}Breusch–Pagan/Cook–Weisberg test for heteroskedasticity 
+Assumption: Normal error terms
+{p 0 11 0}Variable:{space 1}{res:{txt:Fitted values of} {res:gdpgrowth}}{p_end}
+
+H0: Constant variance
+
+{ralign 11:chi2({res:1})} = {res}{ralign 6:222.53}
+{txt}{ralign 11:Prob > chi2} = {res}{ralign 6:0.0000}
+{txt}
+{com}. 
+. 
+. // log close regressions_tutorial2
+. 
+{txt}end of do-file
+
+{com}. do "X:\tutorial_2.do"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. // log using regressions_tutorial2, text
+. 
+. // 1. Regression 1
+. // a) load data
+. use dataEmpBF_Tutorial2.dta
+{txt}
+{com}. 
+. regress gdpgrowth public_banks_1970 loggdp_1960, robust
+
+{txt}Linear regression                               Number of obs     = {res}        87
+                                                {txt}F(2, 84)          =  {res}     0.47
+                                                {txt}Prob > F          = {res}    0.6295
+                                                {txt}R-squared         = {res}    0.1160
+                                                {txt}Root MSE          =    {res} 11.348
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 19}{c |}{col 31}    Robust
+{col 1}        gdpgrowth{col 19}{c |} Coefficient{col 31}  std. err.{col 43}      t{col 51}   P>|t|{col 59}     [95% con{col 72}f. interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+public_banks_1970 {c |}{col 19}{res}{space 2}-11.11978{col 31}{space 2} 11.52606{col 42}{space 1}   -0.96{col 51}{space 3}0.337{col 59}{space 4}-34.04062{col 72}{space 3} 11.80105
+{txt}{space 6}loggdp_1960 {c |}{col 19}{res}{space 2}-1.476743{col 31}{space 2} 1.574408{col 42}{space 1}   -0.94{col 51}{space 3}0.351{col 59}{space 4}-4.607626{col 72}{space 3}  1.65414
+{txt}{space 12}_cons {c |}{col 19}{res}{space 2} 16.46479{col 31}{space 2} 16.23131{col 42}{space 1}    1.01{col 51}{space 3}0.313{col 59}{space 4}-15.81295{col 72}{space 3} 48.74252
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. estat hettest
+{err}{p}{bf:hettest} not appropriate after estimation using robust or clustered VCE{p_end}
+{txt}{search r(498), local:r(498);}
+
+end of do-file
+
+{search r(498), local:r(498);}
+
+{com}. do "C:\Users\s6krkiri\AppData\Local\Temp\STD237c_000000.tmp"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. // log using regressions_tutorial2, text
+. 
+. // 1. Regression 1
+. // a) load data
+. use dataEmpBF_Tutorial2.dta
+{txt}
+{com}. 
+. su gdpgrowth public_banks_1970 loggdp_1960
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 3}gdpgrowth {c |}{res}         87    1.741005    11.92826  -.0561875        100
+{txt}public_~1970 {c |}{res}         87    .5496237    .3885968         -1        1.1
+{txt}{space 1}loggdp_1960 {c |}{res}         87     5.83181    .9996073   3.931826   8.670402
+{txt}
+{com}. regress gdpgrowth public_banks_1970 loggdp_1960
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        87
+{txt}{hline 13}{c +}{hline 34}   F(2, 84)        = {res}     5.51
+{txt}       Model {c |} {res} 1419.24176         2  709.620881   {txt}Prob > F        ={res}    0.0056
+{txt}    Residual {c |} {res} 10817.1248        84  128.775296   {txt}R-squared       ={res}    0.1160
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0949
+{txt}       Total {c |} {res} 12236.3666        86  142.283332   {txt}Root MSE        =   {res} 11.348
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        gdpgrowth{col 19}{c |} Coefficient{col 31}  Std. err.{col 43}      t{col 51}   P>|t|{col 59}     [95% con{col 72}f. interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+public_banks_1970 {c |}{col 19}{res}{space 2}-11.11978{col 31}{space 2} 3.349535{col 42}{space 1}   -3.32{col 51}{space 3}0.001{col 59}{space 4} -17.7807{col 72}{space 3}-4.458865
+{txt}{space 6}loggdp_1960 {c |}{col 19}{res}{space 2}-1.476743{col 31}{space 2}  1.30213{col 42}{space 1}   -1.13{col 51}{space 3}0.260{col 59}{space 4}-4.066172{col 72}{space 3} 1.112685
+{txt}{space 12}_cons {c |}{col 19}{res}{space 2} 16.46479{col 31}{space 2} 8.489099{col 42}{space 1}    1.94{col 51}{space 3}0.056{col 59}{space 4}-.4167185{col 72}{space 3} 33.34629
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. estat hettest
+
+{txt}Breusch–Pagan/Cook–Weisberg test for heteroskedasticity 
+Assumption: Normal error terms
+{p 0 11 0}Variable:{space 1}{res:{txt:Fitted values of} {res:gdpgrowth}}{p_end}
+
+H0: Constant variance
+
+{ralign 11:chi2({res:1})} = {res}{ralign 6:222.53}
+{txt}{ralign 11:Prob > chi2} = {res}{ralign 6:0.0000}
+{txt}
+{com}. 
+. 
+. // log close regressions_tutorial2
+. 
+{txt}end of do-file
+
+{com}. do "X:\tutorial_2.do"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. // log using regressions_tutorial2, text
+. 
+. // 1. Regression 1
+. // a) load data
+. use dataEmpBF_Tutorial2.dta
+{txt}
+{com}. 
+. su gdpgrowth public_banks_1970 loggdp_1960
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 3}gdpgrowth {c |}{res}         87    1.741005    11.92826  -.0561875        100
+{txt}public_~1970 {c |}{res}         87    .5496237    .3885968         -1        1.1
+{txt}{space 1}loggdp_1960 {c |}{res}         87     5.83181    .9996073   3.931826   8.670402
+{txt}
+{com}. 
+. pwcorr gdpgrowth public_banks_1970 loggdp_1960
+
+             {txt}{c |} gdpgro~h pub~1970 log~1960
+{hline 13}{c +}{hline 27}
+   gdpgrowth {c |} {res}  1.0000 
+{txt}public_~1970 {c |} {res} -0.3201   1.0000 
+ {txt}loggdp_1960 {c |} {res} -0.0003  -0.3408   1.0000 
+{txt}
+{com}. regress gdpgrowth public_banks_1970 loggdp_1960
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        87
+{txt}{hline 13}{c +}{hline 34}   F(2, 84)        = {res}     5.51
+{txt}       Model {c |} {res} 1419.24176         2  709.620881   {txt}Prob > F        ={res}    0.0056
+{txt}    Residual {c |} {res} 10817.1248        84  128.775296   {txt}R-squared       ={res}    0.1160
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0949
+{txt}       Total {c |} {res} 12236.3666        86  142.283332   {txt}Root MSE        =   {res} 11.348
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        gdpgrowth{col 19}{c |} Coefficient{col 31}  Std. err.{col 43}      t{col 51}   P>|t|{col 59}     [95% con{col 72}f. interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+public_banks_1970 {c |}{col 19}{res}{space 2}-11.11978{col 31}{space 2} 3.349535{col 42}{space 1}   -3.32{col 51}{space 3}0.001{col 59}{space 4} -17.7807{col 72}{space 3}-4.458865
+{txt}{space 6}loggdp_1960 {c |}{col 19}{res}{space 2}-1.476743{col 31}{space 2}  1.30213{col 42}{space 1}   -1.13{col 51}{space 3}0.260{col 59}{space 4}-4.066172{col 72}{space 3} 1.112685
+{txt}{space 12}_cons {c |}{col 19}{res}{space 2} 16.46479{col 31}{space 2} 8.489099{col 42}{space 1}    1.94{col 51}{space 3}0.056{col 59}{space 4}-.4167185{col 72}{space 3} 33.34629
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. estat hettest
+
+{txt}Breusch–Pagan/Cook–Weisberg test for heteroskedasticity 
+Assumption: Normal error terms
+{p 0 11 0}Variable:{space 1}{res:{txt:Fitted values of} {res:gdpgrowth}}{p_end}
+
+H0: Constant variance
+
+{ralign 11:chi2({res:1})} = {res}{ralign 6:222.53}
+{txt}{ralign 11:Prob > chi2} = {res}{ralign 6:0.0000}
+{txt}
+{com}. 
+. 
+. // log close regressions_tutorial2
+. 
+{txt}end of do-file
+
+{com}. do "X:\tutorial_2.do"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. // log using regressions_tutorial2, text
+. 
+. // 1. Regression 1
+. // a) load data
+. use dataEmpBF_Tutorial2.dta
+{txt}
+{com}. 
+. su gdpgrowth public_banks_1970 loggdp_1960
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 3}gdpgrowth {c |}{res}         87    1.741005    11.92826  -.0561875        100
+{txt}public_~1970 {c |}{res}         87    .5496237    .3885968         -1        1.1
+{txt}{space 1}loggdp_1960 {c |}{res}         87     5.83181    .9996073   3.931826   8.670402
+{txt}
+{com}. 
+. pwcorr loggdp_1960 gdpgrowth public_banks_1970
+
+             {txt}{c |} log~1960 gdpgro~h pub~1970
+{hline 13}{c +}{hline 27}
+ loggdp_1960 {c |} {res}  1.0000 
+   {txt}gdpgrowth {c |} {res} -0.0003   1.0000 
+{txt}public_~1970 {c |} {res} -0.3408  -0.3201   1.0000 
+{txt}
+{com}. regress gdpgrowth public_banks_1970 loggdp_1960
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        87
+{txt}{hline 13}{c +}{hline 34}   F(2, 84)        = {res}     5.51
+{txt}       Model {c |} {res} 1419.24176         2  709.620881   {txt}Prob > F        ={res}    0.0056
+{txt}    Residual {c |} {res} 10817.1248        84  128.775296   {txt}R-squared       ={res}    0.1160
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0949
+{txt}       Total {c |} {res} 12236.3666        86  142.283332   {txt}Root MSE        =   {res} 11.348
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        gdpgrowth{col 19}{c |} Coefficient{col 31}  Std. err.{col 43}      t{col 51}   P>|t|{col 59}     [95% con{col 72}f. interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+public_banks_1970 {c |}{col 19}{res}{space 2}-11.11978{col 31}{space 2} 3.349535{col 42}{space 1}   -3.32{col 51}{space 3}0.001{col 59}{space 4} -17.7807{col 72}{space 3}-4.458865
+{txt}{space 6}loggdp_1960 {c |}{col 19}{res}{space 2}-1.476743{col 31}{space 2}  1.30213{col 42}{space 1}   -1.13{col 51}{space 3}0.260{col 59}{space 4}-4.066172{col 72}{space 3} 1.112685
+{txt}{space 12}_cons {c |}{col 19}{res}{space 2} 16.46479{col 31}{space 2} 8.489099{col 42}{space 1}    1.94{col 51}{space 3}0.056{col 59}{space 4}-.4167185{col 72}{space 3} 33.34629
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. estat hettest
+
+{txt}Breusch–Pagan/Cook–Weisberg test for heteroskedasticity 
+Assumption: Normal error terms
+{p 0 11 0}Variable:{space 1}{res:{txt:Fitted values of} {res:gdpgrowth}}{p_end}
+
+H0: Constant variance
+
+{ralign 11:chi2({res:1})} = {res}{ralign 6:222.53}
+{txt}{ralign 11:Prob > chi2} = {res}{ralign 6:0.0000}
+{txt}
+{com}. 
+. 
+. // log close regressions_tutorial2
+. 
+{txt}end of do-file
+
+{com}. do "X:\tutorial_2.do"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. // log using regressions_tutorial2, text
+. 
+. // 1. Regression 1
+. // a) load data
+. use dataEmpBF_Tutorial2.dta
+{txt}
+{com}. 
+. su gdpgrowth public_banks_1970 loggdp_1960
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 3}gdpgrowth {c |}{res}         87    1.741005    11.92826  -.0561875        100
+{txt}public_~1970 {c |}{res}         87    .5496237    .3885968         -1        1.1
+{txt}{space 1}loggdp_1960 {c |}{res}         87     5.83181    .9996073   3.931826   8.670402
+{txt}
+{com}. 
+. pwcorr loggdp_1960 gdpgrowth public_banks_1970
+
+             {txt}{c |} log~1960 gdpgro~h pub~1970
+{hline 13}{c +}{hline 27}
+ loggdp_1960 {c |} {res}  1.0000 
+   {txt}gdpgrowth {c |} {res} -0.0003   1.0000 
+{txt}public_~1970 {c |} {res} -0.3408  -0.3201   1.0000 
+{txt}
+{com}. // In the first regression the [La Porta et al., 2002] include only
+. // gdpgrowth and public_banks_1970 in a regression. Let's check
+. regress gdpgrowth public_banks_1970
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        87
+{txt}{hline 13}{c +}{hline 34}   F(1, 85)        = {res}     9.70
+{txt}       Model {c |} {res} 1253.61373         1  1253.61373   {txt}Prob > F        ={res}    0.0025
+{txt}    Residual {c |} {res} 10982.7529        85  129.208857   {txt}R-squared       ={res}    0.1024
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0919
+{txt}       Total {c |} {res} 12236.3666        86  142.283332   {txt}Root MSE        =   {res} 11.367
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        gdpgrowth{col 19}{c |} Coefficient{col 31}  Std. err.{col 43}      t{col 51}   P>|t|{col 59}     [95% con{col 72}f. interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+public_banks_1970 {c |}{col 19}{res}{space 2} -9.82502{col 31}{space 2} 3.154262{col 42}{space 1}   -3.11{col 51}{space 3}0.003{col 59}{space 4}-16.09654{col 72}{space 3}-3.553503
+{txt}{space 12}_cons {c |}{col 19}{res}{space 2} 7.141068{col 31}{space 2} 2.119133{col 42}{space 1}    3.37{col 51}{space 3}0.001{col 59}{space 4} 2.927664{col 72}{space 3} 11.35447
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. //regress gdpgrowth public_banks_1970 loggdp_1960
+. //estat hettest
+. 
+. 
+. // log close regressions_tutorial2
+. 
+{txt}end of do-file
+
+{com}. ln(public_banks_1970)
+{err}command {bf}ln{sf} is unrecognized
+{txt}{search r(199), local:r(199);}
+
+{com}. local t = ln(public_banks_1970)
+
+. t
+{err}command {bf}t{sf} is unrecognized
+{txt}{search r(199), local:r(199);}
+
+{com}. display t
+{res}{err}t not found
+{txt}{search r(111), local:r(111);}
+
+{com}. do "C:\Users\s6krkiri\AppData\Local\Temp\STD237c_000000.tmp"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. // log using regressions_tutorial2, text
+. 
+. // 1. Regression 1
+. // a) load data
+. use dataEmpBF_Tutorial2.dta
+{txt}
+{com}. 
+. su gdpgrowth public_banks_1970 loggdp_1960
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 3}gdpgrowth {c |}{res}         87    1.741005    11.92826  -.0561875        100
+{txt}public_~1970 {c |}{res}         87    .5496237    .3885968         -1        1.1
+{txt}{space 1}loggdp_1960 {c |}{res}         87     5.83181    .9996073   3.931826   8.670402
+{txt}
+{com}. 
+. pwcorr loggdp_1960 gdpgrowth public_banks_1970
+
+             {txt}{c |} log~1960 gdpgro~h pub~1970
+{hline 13}{c +}{hline 27}
+ loggdp_1960 {c |} {res}  1.0000 
+   {txt}gdpgrowth {c |} {res} -0.0003   1.0000 
+{txt}public_~1970 {c |} {res} -0.3408  -0.3201   1.0000 
+{txt}
+{com}. // In the first regression the [La Porta et al., 2002] include only
+. // gdpgrowth and public_banks_1970 in a regression. Let's check
+. // regress gdpgrowth public_banks_1970 // beta -9.82502
+. regress gdpgrowth public_banks_1970 loggdp_1960
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        87
+{txt}{hline 13}{c +}{hline 34}   F(2, 84)        = {res}     5.51
+{txt}       Model {c |} {res} 1419.24176         2  709.620881   {txt}Prob > F        ={res}    0.0056
+{txt}    Residual {c |} {res} 10817.1248        84  128.775296   {txt}R-squared       ={res}    0.1160
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0949
+{txt}       Total {c |} {res} 12236.3666        86  142.283332   {txt}Root MSE        =   {res} 11.348
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        gdpgrowth{col 19}{c |} Coefficient{col 31}  Std. err.{col 43}      t{col 51}   P>|t|{col 59}     [95% con{col 72}f. interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+public_banks_1970 {c |}{col 19}{res}{space 2}-11.11978{col 31}{space 2} 3.349535{col 42}{space 1}   -3.32{col 51}{space 3}0.001{col 59}{space 4} -17.7807{col 72}{space 3}-4.458865
+{txt}{space 6}loggdp_1960 {c |}{col 19}{res}{space 2}-1.476743{col 31}{space 2}  1.30213{col 42}{space 1}   -1.13{col 51}{space 3}0.260{col 59}{space 4}-4.066172{col 72}{space 3} 1.112685
+{txt}{space 12}_cons {c |}{col 19}{res}{space 2} 16.46479{col 31}{space 2} 8.489099{col 42}{space 1}    1.94{col 51}{space 3}0.056{col 59}{space 4}-.4167185{col 72}{space 3} 33.34629
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. //estat hettest
+. 
+. 
+. // log close regressions_tutorial2
+. 
+{txt}end of do-file
+
+{com}. do "C:\Users\s6krkiri\AppData\Local\Temp\STD237c_000000.tmp"
+{txt}
+{com}. summarize
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+country_name {c |}{res}          0
+{txt}birth_r~1970 {c |}{res}         83    32.84936    12.94351       13.5      53.32
+{txt}public_~1970 {c |}{res}         87    .5496237    .3885968         -1        1.1
+{txt}{space 3}schooling {c |}{res}         85    5.030555    2.459215         .9      10.79
+{txt}{space 6}europe {c |}{res}         85    .2470588    .4338609          0          1
+{txt}{hline 13}{c +}{hline 57}
+private~1960 {c |}{res}         82     .254575    .2294715   .0166615   1.295776
+{txt}{space 3}gdpgrowth {c |}{res}         87    1.741005    11.92826  -.0561875        100
+{txt}{space 1}loggdp_1960 {c |}{res}         87     5.83181    .9996073   3.931826   8.670402
+{txt}{space 8}oecd {c |}{res}         85    .2823529    .4528157          0          1
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. browse
+
+. do "C:\Users\s6krkiri\AppData\Local\Temp\STD237c_000000.tmp"
+{txt}
+{com}. twoway scatterplot gdpgrowth public_banks_1970
+{err}scatterplot is not a twoway plot type
+{txt}{search r(198), local:r(198);}
+
+end of do-file
+
+{search r(198), local:r(198);}
+
+{com}. do "C:\Users\s6krkiri\AppData\Local\Temp\STD237c_000000.tmp"
+{txt}
+{com}. twoway (scatter gdpgrowth public_banks_1970)
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\s6krkiri\AppData\Local\Temp\STD237c_000000.tmp"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. // log using regressions_tutorial2, text
+. 
+. // 1. Regression 1
+. // a) load data
+. use dataEmpBF_Tutorial2.dta
+{txt}
+{com}. 
+. summarize gdpgrowth public_banks_1970 loggdp_1960
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 3}gdpgrowth {c |}{res}         87    1.741005    11.92826  -.0561875        100
+{txt}public_~1970 {c |}{res}         87    .5496237    .3885968         -1        1.1
+{txt}{space 1}loggdp_1960 {c |}{res}         87     5.83181    .9996073   3.931826   8.670402
+{txt}
+{com}. 
+. pwcorr loggdp_1960 gdpgrowth public_banks_1970
+
+             {txt}{c |} log~1960 gdpgro~h pub~1970
+{hline 13}{c +}{hline 27}
+ loggdp_1960 {c |} {res}  1.0000 
+   {txt}gdpgrowth {c |} {res} -0.0003   1.0000 
+{txt}public_~1970 {c |} {res} -0.3408  -0.3201   1.0000 
+{txt}
+{com}. // In the first regression the [La Porta et al., 2002] include only
+. // gdpgrowth and public_banks_1970 in a regression. Let's check
+. 
+. // regress gdpgrowth public_banks_1970 // beta -9.82502
+. 
+. // b) run this regression
+. regress gdpgrowth public_banks_1970 loggdp_1960 // beta -11.11978 
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        87
+{txt}{hline 13}{c +}{hline 34}   F(2, 84)        = {res}     5.51
+{txt}       Model {c |} {res} 1419.24176         2  709.620881   {txt}Prob > F        ={res}    0.0056
+{txt}    Residual {c |} {res} 10817.1248        84  128.775296   {txt}R-squared       ={res}    0.1160
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0949
+{txt}       Total {c |} {res} 12236.3666        86  142.283332   {txt}Root MSE        =   {res} 11.348
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        gdpgrowth{col 19}{c |} Coefficient{col 31}  Std. err.{col 43}      t{col 51}   P>|t|{col 59}     [95% con{col 72}f. interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+public_banks_1970 {c |}{col 19}{res}{space 2}-11.11978{col 31}{space 2} 3.349535{col 42}{space 1}   -3.32{col 51}{space 3}0.001{col 59}{space 4} -17.7807{col 72}{space 3}-4.458865
+{txt}{space 6}loggdp_1960 {c |}{col 19}{res}{space 2}-1.476743{col 31}{space 2}  1.30213{col 42}{space 1}   -1.13{col 51}{space 3}0.260{col 59}{space 4}-4.066172{col 72}{space 3} 1.112685
+{txt}{space 12}_cons {c |}{col 19}{res}{space 2} 16.46479{col 31}{space 2} 8.489099{col 42}{space 1}    1.94{col 51}{space 3}0.056{col 59}{space 4}-.4167185{col 72}{space 3} 33.34629
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+. // c) compare the coeffictient for public_banks_1970 from the [La Porta et al., 2002]
+. // paper. Comment briefly
+. // - Our coefficient is -11.11978, theirs is around -0.024. The sign is the same, suggesting
+. // that government ownership of banks affects growth negatively
+. 
+. // 2. Descriptive statistics
+. // a) compute summary statistics for all variables and comment
+. summarize
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+country_name {c |}{res}          0
+{txt}birth_r~1970 {c |}{res}         83    32.84936    12.94351       13.5      53.32
+{txt}public_~1970 {c |}{res}         87    .5496237    .3885968         -1        1.1
+{txt}{space 3}schooling {c |}{res}         85    5.030555    2.459215         .9      10.79
+{txt}{space 6}europe {c |}{res}         85    .2470588    .4338609          0          1
+{txt}{hline 13}{c +}{hline 57}
+private~1960 {c |}{res}         82     .254575    .2294715   .0166615   1.295776
+{txt}{space 3}gdpgrowth {c |}{res}         87    1.741005    11.92826  -.0561875        100
+{txt}{space 1}loggdp_1960 {c |}{res}         87     5.83181    .9996073   3.931826   8.670402
+{txt}{space 8}oecd {c |}{res}         85    .2823529    .4528157          0          1
+{txt}
+{com}. // We have 2 dummies: europe and oecd. schooling is a bit strange, but understandable.
+. // We have missing values for some variables
+. 
+. // b) create scatterplot gdpgrowth and public_banks_1970
+. twoway (scatter gdpgrowth public_banks_1970)
+{res}{txt}
+{com}. // Save graph
+. graph export gdpgrowth_public_banks_197.pdf
+{txt}{p 0 4 2}
+file {bf}
+gdpgrowth_public_banks_197.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+
+{com}. 
+. 
+. 
+. 
+. 
+. // log close regressions_tutorial2
+. 
+{txt}end of do-file
+
+{com}. do "C:\Users\s6krkiri\AppData\Local\Temp\STD237c_000000.tmp"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. // log using regressions_tutorial2, text
+. 
+. // 1. Regression 1
+. // a) load data
+. use dataEmpBF_Tutorial2.dta
+{txt}
+{com}. 
+. summarize gdpgrowth public_banks_1970 loggdp_1960
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 3}gdpgrowth {c |}{res}         87    1.741005    11.92826  -.0561875        100
+{txt}public_~1970 {c |}{res}         87    .5496237    .3885968         -1        1.1
+{txt}{space 1}loggdp_1960 {c |}{res}         87     5.83181    .9996073   3.931826   8.670402
+{txt}
+{com}. 
+. pwcorr loggdp_1960 gdpgrowth public_banks_1970
+
+             {txt}{c |} log~1960 gdpgro~h pub~1970
+{hline 13}{c +}{hline 27}
+ loggdp_1960 {c |} {res}  1.0000 
+   {txt}gdpgrowth {c |} {res} -0.0003   1.0000 
+{txt}public_~1970 {c |} {res} -0.3408  -0.3201   1.0000 
+{txt}
+{com}. // In the first regression the [La Porta et al., 2002] include only
+. // gdpgrowth and public_banks_1970 in a regression. Let's check
+. 
+. // regress gdpgrowth public_banks_1970 // beta -9.82502
+. 
+. // b) run this regression
+. regress gdpgrowth public_banks_1970 loggdp_1960 // beta -11.11978 
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        87
+{txt}{hline 13}{c +}{hline 34}   F(2, 84)        = {res}     5.51
+{txt}       Model {c |} {res} 1419.24176         2  709.620881   {txt}Prob > F        ={res}    0.0056
+{txt}    Residual {c |} {res} 10817.1248        84  128.775296   {txt}R-squared       ={res}    0.1160
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0949
+{txt}       Total {c |} {res} 12236.3666        86  142.283332   {txt}Root MSE        =   {res} 11.348
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        gdpgrowth{col 19}{c |} Coefficient{col 31}  Std. err.{col 43}      t{col 51}   P>|t|{col 59}     [95% con{col 72}f. interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+public_banks_1970 {c |}{col 19}{res}{space 2}-11.11978{col 31}{space 2} 3.349535{col 42}{space 1}   -3.32{col 51}{space 3}0.001{col 59}{space 4} -17.7807{col 72}{space 3}-4.458865
+{txt}{space 6}loggdp_1960 {c |}{col 19}{res}{space 2}-1.476743{col 31}{space 2}  1.30213{col 42}{space 1}   -1.13{col 51}{space 3}0.260{col 59}{space 4}-4.066172{col 72}{space 3} 1.112685
+{txt}{space 12}_cons {c |}{col 19}{res}{space 2} 16.46479{col 31}{space 2} 8.489099{col 42}{space 1}    1.94{col 51}{space 3}0.056{col 59}{space 4}-.4167185{col 72}{space 3} 33.34629
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+. // c) compare the coeffictient for public_banks_1970 from the [La Porta et al., 2002]
+. // paper. Comment briefly
+. // - Our coefficient is -11.11978, theirs is around -0.024. The sign is the same, suggesting
+. // that government ownership of banks affects growth negatively
+. 
+. // 2. Descriptive statistics
+. // a) compute summary statistics for all variables and comment
+. summarize
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+country_name {c |}{res}          0
+{txt}birth_r~1970 {c |}{res}         83    32.84936    12.94351       13.5      53.32
+{txt}public_~1970 {c |}{res}         87    .5496237    .3885968         -1        1.1
+{txt}{space 3}schooling {c |}{res}         85    5.030555    2.459215         .9      10.79
+{txt}{space 6}europe {c |}{res}         85    .2470588    .4338609          0          1
+{txt}{hline 13}{c +}{hline 57}
+private~1960 {c |}{res}         82     .254575    .2294715   .0166615   1.295776
+{txt}{space 3}gdpgrowth {c |}{res}         87    1.741005    11.92826  -.0561875        100
+{txt}{space 1}loggdp_1960 {c |}{res}         87     5.83181    .9996073   3.931826   8.670402
+{txt}{space 8}oecd {c |}{res}         85    .2823529    .4528157          0          1
+{txt}
+{com}. // We have 2 dummies: europe and oecd. schooling is a bit strange, but understandable.
+. // We have missing values for some variables
+. 
+. // b) create scatterplot gdpgrowth and public_banks_1970
+. twoway (scatter gdpgrowth public_banks_1970)
+{res}{txt}
+{com}. // Save graph
+. // graph export gdpgrowth_public_banks_197.pdf
+. 
+. // c) remove the two outliers. Why can we remove the two outliers?
+. // - Because we're heartless people not interested in the wellbeing of Fantasia and Wonderland
+. drop if country_name == "Fantasia" || country_name == "Wonderland"
+{txt}(2 observations deleted)
+
+{com}. 
+. 
+. 
+. 
+. // log close regressions_tutorial2
+. 
+{txt}end of do-file
+
+{com}. do "C:\Users\s6krkiri\AppData\Local\Temp\STD237c_000000.tmp"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. // log using regressions_tutorial2, text
+. 
+. // 1. Regression 1
+. // a) load data
+. use dataEmpBF_Tutorial2.dta
+{txt}
+{com}. 
+. summarize gdpgrowth public_banks_1970 loggdp_1960
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 3}gdpgrowth {c |}{res}         87    1.741005    11.92826  -.0561875        100
+{txt}public_~1970 {c |}{res}         87    .5496237    .3885968         -1        1.1
+{txt}{space 1}loggdp_1960 {c |}{res}         87     5.83181    .9996073   3.931826   8.670402
+{txt}
+{com}. 
+. pwcorr loggdp_1960 gdpgrowth public_banks_1970
+
+             {txt}{c |} log~1960 gdpgro~h pub~1970
+{hline 13}{c +}{hline 27}
+ loggdp_1960 {c |} {res}  1.0000 
+   {txt}gdpgrowth {c |} {res} -0.0003   1.0000 
+{txt}public_~1970 {c |} {res} -0.3408  -0.3201   1.0000 
+{txt}
+{com}. // In the first regression the [La Porta et al., 2002] include only
+. // gdpgrowth and public_banks_1970 in a regression. Let's check
+. 
+. // regress gdpgrowth public_banks_1970 // beta -9.82502
+. 
+. // b) run this regression
+. regress gdpgrowth public_banks_1970 loggdp_1960 // beta -11.11978 
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        87
+{txt}{hline 13}{c +}{hline 34}   F(2, 84)        = {res}     5.51
+{txt}       Model {c |} {res} 1419.24176         2  709.620881   {txt}Prob > F        ={res}    0.0056
+{txt}    Residual {c |} {res} 10817.1248        84  128.775296   {txt}R-squared       ={res}    0.1160
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0949
+{txt}       Total {c |} {res} 12236.3666        86  142.283332   {txt}Root MSE        =   {res} 11.348
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        gdpgrowth{col 19}{c |} Coefficient{col 31}  Std. err.{col 43}      t{col 51}   P>|t|{col 59}     [95% con{col 72}f. interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+public_banks_1970 {c |}{col 19}{res}{space 2}-11.11978{col 31}{space 2} 3.349535{col 42}{space 1}   -3.32{col 51}{space 3}0.001{col 59}{space 4} -17.7807{col 72}{space 3}-4.458865
+{txt}{space 6}loggdp_1960 {c |}{col 19}{res}{space 2}-1.476743{col 31}{space 2}  1.30213{col 42}{space 1}   -1.13{col 51}{space 3}0.260{col 59}{space 4}-4.066172{col 72}{space 3} 1.112685
+{txt}{space 12}_cons {c |}{col 19}{res}{space 2} 16.46479{col 31}{space 2} 8.489099{col 42}{space 1}    1.94{col 51}{space 3}0.056{col 59}{space 4}-.4167185{col 72}{space 3} 33.34629
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+. // c) compare the coeffictient for public_banks_1970 from the [La Porta et al., 2002]
+. // paper. Comment briefly
+. // - Our coefficient is -11.11978, theirs is around -0.024. The sign is the same, suggesting
+. // that government ownership of banks affects growth negatively
+. 
+. // 2. Descriptive statistics
+. // a) compute summary statistics for all variables and comment
+. summarize
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+country_name {c |}{res}          0
+{txt}birth_r~1970 {c |}{res}         83    32.84936    12.94351       13.5      53.32
+{txt}public_~1970 {c |}{res}         87    .5496237    .3885968         -1        1.1
+{txt}{space 3}schooling {c |}{res}         85    5.030555    2.459215         .9      10.79
+{txt}{space 6}europe {c |}{res}         85    .2470588    .4338609          0          1
+{txt}{hline 13}{c +}{hline 57}
+private~1960 {c |}{res}         82     .254575    .2294715   .0166615   1.295776
+{txt}{space 3}gdpgrowth {c |}{res}         87    1.741005    11.92826  -.0561875        100
+{txt}{space 1}loggdp_1960 {c |}{res}         87     5.83181    .9996073   3.931826   8.670402
+{txt}{space 8}oecd {c |}{res}         85    .2823529    .4528157          0          1
+{txt}
+{com}. // We have 2 dummies: europe and oecd. schooling is a bit strange, but understandable.
+. // We have missing values for some variables
+. 
+. // b) create scatterplot gdpgrowth and public_banks_1970
+. twoway (scatter gdpgrowth public_banks_1970)
+{res}{txt}
+{com}. // Save graph
+. // graph export gdpgrowth_public_banks_197.pdf
+. 
+. // c) remove the two outliers. Why can we remove the two outliers?
+. // - Because we're heartless people not interested in the wellbeing of Fantasia and Wonderland
+. drop if country_name == "Fantasia" || country_name == "Wonderland"
+{txt}(2 observations deleted)
+
+{com}. 
+. 
+. 
+. 
+. // log close regressions_tutorial2
+. 
+{txt}end of do-file
+
+{com}. browse
+
+. do "C:\Users\s6krkiri\AppData\Local\Temp\STD237c_000000.tmp"
+{txt}
+{com}. clear
+{txt}
+{com}. 
+. // log using regressions_tutorial2, text
+. 
+. // 1. Regression 1
+. // a) load data
+. use dataEmpBF_Tutorial2.dta
+{txt}
+{com}. 
+. summarize gdpgrowth public_banks_1970 loggdp_1960
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 3}gdpgrowth {c |}{res}         87    1.741005    11.92826  -.0561875        100
+{txt}public_~1970 {c |}{res}         87    .5496237    .3885968         -1        1.1
+{txt}{space 1}loggdp_1960 {c |}{res}         87     5.83181    .9996073   3.931826   8.670402
+{txt}
+{com}. 
+. pwcorr loggdp_1960 gdpgrowth public_banks_1970
+
+             {txt}{c |} log~1960 gdpgro~h pub~1970
+{hline 13}{c +}{hline 27}
+ loggdp_1960 {c |} {res}  1.0000 
+   {txt}gdpgrowth {c |} {res} -0.0003   1.0000 
+{txt}public_~1970 {c |} {res} -0.3408  -0.3201   1.0000 
+{txt}
+{com}. // In the first regression the [La Porta et al., 2002] include only
+. // gdpgrowth and public_banks_1970 in a regression. Let's check
+. 
+. // regress gdpgrowth public_banks_1970 // beta -9.82502
+. 
+. // b) run this regression
+. regress gdpgrowth public_banks_1970 loggdp_1960 // beta -11.11978 
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        87
+{txt}{hline 13}{c +}{hline 34}   F(2, 84)        = {res}     5.51
+{txt}       Model {c |} {res} 1419.24176         2  709.620881   {txt}Prob > F        ={res}    0.0056
+{txt}    Residual {c |} {res} 10817.1248        84  128.775296   {txt}R-squared       ={res}    0.1160
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.0949
+{txt}       Total {c |} {res} 12236.3666        86  142.283332   {txt}Root MSE        =   {res} 11.348
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        gdpgrowth{col 19}{c |} Coefficient{col 31}  Std. err.{col 43}      t{col 51}   P>|t|{col 59}     [95% con{col 72}f. interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+public_banks_1970 {c |}{col 19}{res}{space 2}-11.11978{col 31}{space 2} 3.349535{col 42}{space 1}   -3.32{col 51}{space 3}0.001{col 59}{space 4} -17.7807{col 72}{space 3}-4.458865
+{txt}{space 6}loggdp_1960 {c |}{col 19}{res}{space 2}-1.476743{col 31}{space 2}  1.30213{col 42}{space 1}   -1.13{col 51}{space 3}0.260{col 59}{space 4}-4.066172{col 72}{space 3} 1.112685
+{txt}{space 12}_cons {c |}{col 19}{res}{space 2} 16.46479{col 31}{space 2} 8.489099{col 42}{space 1}    1.94{col 51}{space 3}0.056{col 59}{space 4}-.4167185{col 72}{space 3} 33.34629
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+. // c) compare the coeffictient for public_banks_1970 from the [La Porta et al., 2002]
+. // paper. Comment briefly
+. // - Our coefficient is -11.11978, theirs is around -0.024. The sign is the same, suggesting
+. // that government ownership of banks affects growth negatively
+. 
+. // 2. Descriptive statistics
+. // a) compute summary statistics for all variables and comment
+. summarize
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+country_name {c |}{res}          0
+{txt}birth_r~1970 {c |}{res}         83    32.84936    12.94351       13.5      53.32
+{txt}public_~1970 {c |}{res}         87    .5496237    .3885968         -1        1.1
+{txt}{space 3}schooling {c |}{res}         85    5.030555    2.459215         .9      10.79
+{txt}{space 6}europe {c |}{res}         85    .2470588    .4338609          0          1
+{txt}{hline 13}{c +}{hline 57}
+private~1960 {c |}{res}         82     .254575    .2294715   .0166615   1.295776
+{txt}{space 3}gdpgrowth {c |}{res}         87    1.741005    11.92826  -.0561875        100
+{txt}{space 1}loggdp_1960 {c |}{res}         87     5.83181    .9996073   3.931826   8.670402
+{txt}{space 8}oecd {c |}{res}         85    .2823529    .4528157          0          1
+{txt}
+{com}. // We have 2 dummies: europe and oecd. schooling is a bit strange, but understandable.
+. // We have missing values for some variables
+. 
+. // b) create scatterplot gdpgrowth and public_banks_1970
+. twoway (scatter gdpgrowth public_banks_1970)
+{res}{txt}
+{com}. // Save graph
+. // graph export gdpgrowth_public_banks_197.pdf
+. 
+. // c) remove the two outliers. Why can we remove the two outliers?
+. // - Because we're heartless people not interested in the wellbeing of Fantasia and Wonderland
+. drop if country_name == "Fantasia" || country_name == "Wonderland"
+{txt}(2 observations deleted)
+
+{com}. twoway (scatter gdpgrowth public_banks_1970)
+{res}{txt}
+{com}. 
+. 
+. 
+. 
+. // log close regressions_tutorial2
+. 
+{txt}end of do-file
+
+{com}. do "C:\Users\s6krkiri\AppData\Local\Temp\STD237c_000000.tmp"
+{txt}
+{com}. twoway (scatter gdpgrowth public_banks_1970)
+{res}{txt}
+{com}. graph export gdpgrowth_public_banks_197_removed_outliers.pdf
+{txt}{p 0 4 2}
+file {bf}
+gdpgrowth_public_banks_197_removed_outliers.pdf{rm}
+saved as
+PDF
+format
+{p_end}
+
+{com}. 
+{txt}end of do-file
+
+{com}. do "C:\Users\s6krkiri\AppData\Local\Temp\STD237c_000000.tmp"
+{txt}
+{com}. regress gdpgrowth public_banks_1970 loggdp_1960
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        85
+{txt}{hline 13}{c +}{hline 34}   F(2, 82)        = {res}     5.80
+{txt}       Model {c |} {res} .005791958         2  .002895979   {txt}Prob > F        ={res}    0.0044
+{txt}    Residual {c |} {res} .040929667        82  .000499142   {txt}R-squared       ={res}    0.1240
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.1026
+{txt}       Total {c |} {res} .046721625        84   .00055621   {txt}Root MSE        =   {res} .02234
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        gdpgrowth{col 19}{c |} Coefficient{col 31}  Std. err.{col 43}      t{col 51}   P>|t|{col 59}     [95% con{col 72}f. interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+public_banks_1970 {c |}{col 19}{res}{space 2} -.023484{col 31}{space 2} .0075477{col 42}{space 1}   -3.11{col 51}{space 3}0.003{col 59}{space 4}-.0384987{col 72}{space 3}-.0084693
+{txt}{space 6}loggdp_1960 {c |}{col 19}{res}{space 2}-.0064537{col 31}{space 2} .0026094{col 42}{space 1}   -2.47{col 51}{space 3}0.015{col 59}{space 4}-.0116445{col 72}{space 3}-.0012628
+{txt}{space 12}_cons {c |}{col 19}{res}{space 2} .0680836{col 31}{space 2} .0174589{col 42}{space 1}    3.90{col 51}{space 3}0.000{col 59}{space 4} .0333523{col 72}{space 3} .1028149
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. 
